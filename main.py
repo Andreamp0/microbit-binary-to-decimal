@@ -6,19 +6,21 @@ curr = 0
 
 
 def on_button_pressed_a():
-    btn(Button.B, 1)
-        
-def on_button_pressed_b():
-    btn(Button.A, 0)
-
-def btn(obtn, add):
     global curr
-    basic.pause(100)
-    if input.button_is_pressed(obtn):
-        on_button_pressed_ab()
-    else:
-        curr = (curr << 1) + add
-        show()
+    curr = (curr << 1) + 1
+    show()
+
+def on_button_pressed_b():
+    global curr
+    curr = (curr << 1)
+    show()
+
+def on_button_pressed_ab():
+    global curr
+    basic.clear_screen()
+    basic.show_number(curr)
+    curr = 0
+    basic.clear_screen()
 
 def show():
     global curr
@@ -30,13 +32,7 @@ def show():
             else:
                 led.unplot(i,j)
 
-def on_button_pressed_ab():
-    global curr
-    basic.clear_screen()
-    basic.show_number(curr)
-    curr = 0
-    basic.clear_screen()
-
 
 input.on_button_pressed(Button.B, on_button_pressed_b)
 input.on_button_pressed(Button.A, on_button_pressed_a)
+input.on_button_pressed(Button.AB, on_button_pressed_ab)
