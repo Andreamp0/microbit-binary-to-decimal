@@ -6,15 +6,15 @@ curr = 0
 
 
 def on_button_pressed_a():
-    aboraddbit(Button.B, 1)
+    btn(Button.B, 1)
         
 def on_button_pressed_b():
-    aboraddbit(Button.A, 0)
+    btn(Button.A, 0)
 
-def aboraddbit(btn, add):
+def btn(obtn, add):
     global curr
     basic.pause(100)
-    if input.button_is_pressed(btn):
+    if input.button_is_pressed(obtn):
         on_button_pressed_ab()
     else:
         curr = (curr << 1) + add

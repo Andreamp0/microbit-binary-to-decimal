@@ -1,5 +1,5 @@
 {
-    "name": "Binary to Decimal",
+    "name": "Morse Code",
     "description": "",
     "dependencies": {
         "core": "*",

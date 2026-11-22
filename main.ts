@@ -2,10 +2,10 @@ let curr = 0
 //  Press A to add a 1 at the end of the binary number
 //  Press B to add a 0 at the end of the binary number
 //  Press AB to show and reset the decimal number
-function aboraddbit(btn: number, add: number) {
+function btn(obtn: number, add: number) {
     
     basic.pause(100)
-    if (input.buttonIsPressed(btn)) {
+    if (input.buttonIsPressed(obtn)) {
         on_button_pressed_ab()
     } else {
         curr = (curr << 1) + add
@@ -38,8 +38,8 @@ function on_button_pressed_ab() {
 }
 
 input.onButtonPressed(Button.B, function on_button_pressed_b() {
-    aboraddbit(Button.A, 0)
+    btn(Button.A, 0)
 })
 input.onButtonPressed(Button.A, function on_button_pressed_a() {
-    aboraddbit(Button.B, 1)
+    btn(Button.B, 1)
 })
