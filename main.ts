@@ -1,10 +1,7 @@
 let curr = 0
-/** 
-Press A to add a 1 at the end of the binary number
-Press B to add a 0 at the end of the binary number
-Press AB to show and reset the decimal number
-
- */
+//  Press A to add a 1 at the end of the binary number
+//  Press B to add a 0 at the end of the binary number
+//  Press AB to show and reset the decimal number
 function aboraddbit(btn: number, add: number) {
     
     basic.pause(100)
